@@ -1,5 +1,5 @@
 
-#BeagleBoneBlack
+# BeagleBoneBlack
 
 The AM335x is complex piece of hardware, but has limited internal RAM (128 kB)
 
@@ -13,25 +13,25 @@ These bootloader stages systematically unlock the full functionality of the devi
 	3) U-BOOT
 	4) Linux Kernel
 
-+--------+----------------+----------------+----------+
-| Boot   | Terminology #1 | Terminology #2 | Actual   |
-| stage  |                |                | program  |
-| number |                |                | name     |
-+--------+----------------+----------------+----------+
-| 1      |  Primary       |  -             | ROM code |
-|        |  Program       |                |          |
-|        |  Loader        |                |          |
-|        |                |                |          |
-| 2      |  Secondary     |  1st stage     | u-boot   |
-|        |  Program       |  bootloader    | SPL/ MLO |
-|        |  Loader (SPL)  |                |          |
-|        |                |                |          |
-| 3      |  -             |  2nd stage     | u-boot   |
-|        |                |  bootloader    |          |
-|        |                |                |          |
-| 4      |  -             |  -             | kernel   |
-|        |                |                |          |
-+--------+----------------+----------------+----------+
+	+--------+----------------+----------------+----------+
+	| Boot   | Terminology #1 | Terminology #2 | Actual   |
+	| stage  |                |                | program  |
+	| number |                |                | name     |
+	+--------+----------------+----------------+----------+
+	| 1      |  Primary       |  -             | ROM code |
+	|        |  Program       |                |          |
+	|        |  Loader        |                |          |
+	|        |                |                |          |
+	| 2      |  Secondary     |  1st stage     | u-boot   |
+	|        |  Program       |  bootloader    | SPL/ MLO |
+	|        |  Loader (SPL)  |                |          |
+	|        |                |                |          |
+	| 3      |  -             |  2nd stage     | u-boot   |
+	|        |                |  bootloader    |          |
+	|        |                |                |          |
+	| 4      |  -             |  -             | kernel   |
+	|        |                |                |          |
+	+--------+----------------+----------------+----------+
 
 
 1st Stage Bootloader: ROM Code
@@ -60,13 +60,13 @@ The main purpose of the ROM code is to set up the device for the second stage bo
 	MMC1 interface first (the onboard eMMC)
 	MMC0 (external uSD)
 	UART0 
-	USB0.
+	USB0
 
 ## If the boot switch (S2) is held down during power-up, the ROM will boot from 
 	SPI0 Interface first
 	MMC0 (external uSD)
 	USB0
-	UART0.
+	UART0
 
 2nd Stage Bootloader: SPL
 ------------------------------
