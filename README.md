@@ -22,7 +22,19 @@ resembles professional embedded devices design. This board is very flexible, so 
 	nature. It also often can be found in networking devices (routers, etc), and is used as initramfs 
 	in desktop GNU/Linux distributions.
 
-# The only thing we can’t use this board for is Android.
+## The only thing we can’t use this board for is Android.
+
+### 4 elements of BBB board End-to-End Bring Up with Upstream Components
+-	**Preparing the Tools**
+
+-	**Obtaining and Building the Software**
+
+-	**Flashing**
+
+-	**Booting**
+
+
+
 
 ## Copying images to the card
     $ sudo mount /dev/sdb1 /media/$USER/BOOT
