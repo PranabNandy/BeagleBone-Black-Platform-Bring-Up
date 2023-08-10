@@ -13,6 +13,15 @@ Because it's an open hardware board, it’s very convenient to use it for learni
 bits could be studied on it. Also, it has a good design (as opposed to e.g. Raspberry Pi), which
 resembles professional embedded devices design. This board is very flexible, so we can use it to learn C, Linux, Embedded, Kernel development, testing, etc. 
 
+## We will focus on upstream components:
+	1. U-Boot: this is the most often used bootloader in embedded systems and it’s recommended for BBB. 
+	We will use upstream U-Boot, as it supports BBB.
+	2. Linux Kernel: it’s a main part of Linux OS. We will use upstream kernel, as it supports BBB.
+	3. BusyBox rootfs: it’s minimal, so it’s the best choice for understanding the crucial OS parts. 
+	It can be useful in real work for testing, debugging and isolating the bugs, due to its minimalistic 
+	nature. It also often can be found in networking devices (routers, etc), and is used as initramfs 
+	in desktop GNU/Linux distributions.
+
 # The only thing we can’t use this board for is Android.
 
 ## Copying images to the card
