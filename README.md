@@ -3,11 +3,11 @@
 ## Why use BeagleBone Black​ ? 
 
 - BeagleBone Black board is a development board. It’s open hardware, so you can find hardware design files (schematic and PCB layout) here:
-	-- 1. http://beagleboard.org/hardware/design
-	-- 2. https://github.com/beagleboard/BeagleBone-Black
-	-- 3. https://www.elinux.org/Beagleboard:BeagleBoneBlack#Hardware_Files
+	-	http://beagleboard.org/hardware/design
+	- 	https://github.com/beagleboard/BeagleBone-Black
+	-	https://www.elinux.org/Beagleboard:BeagleBoneBlack#Hardware_Files
 - Technical Reference Manual (TRM) and datasheet for SoC (AM335x) are also public and can be found here:
-	-- http://www.ti.com/product/AM3358/technicaldocuments
+	-	http://www.ti.com/product/AM3358/technicaldocuments
 	
 Because it's an open hardware board, it’s very convenient to use it for learning. Even electronics
 bits could be studied on it. Also, it has a good design (as opposed to e.g. Raspberry Pi), which
