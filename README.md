@@ -1,4 +1,5 @@
 # BeagleBone-Black-Platform-Bring-Up
+### Beagle Bone Black Initial Boot up [Video](https://www.youtube.com/watch?v=R6c0kC25NRo&ab_channel=PranabNandy)
 
 ## Why use BeagleBone Black​ ? 
 
