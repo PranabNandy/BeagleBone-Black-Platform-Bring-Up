@@ -4,18 +4,18 @@
 
 - Device driver is a piece of code that configures and manages a device. 
 - The device driver code knows, how to configure the device, sending data to the device, and it knows how to process requests which originate from the device. 
-- When the device driver code is loaded into the operating system such as Linux, it exposes interfaces to the user-space so that the user application can communicate with the device. 
+- When the device driver code is loaded into the operating system such as Linux, **it exposes interfaces to the user-space** so that the user application can communicate with the device. 
 - Without the device driver, the OS/Application will not have a clear picture of how to deal with a device.
 - There are three types of device drivers:
-    + Character device drivers: character devices (RTC, keyboard, sensor,...)
-    + Block device drivers: storage devices (mmc, eeproom, flash, harddisk,...)
-    + Network device drivers: network devices (ethernet, wifi, bluetooth,...)
+    + **Character device drivers**: character devices (RTC, keyboard, sensor,...)
+    + **Block device drivers**: storage devices (mmc, eeproom, flash, harddisk,...)
+    + **Network device drivers**: network devices (ethernet, wifi, bluetooth,...)
 
 <p align="center"><img width="900" src="https://user-images.githubusercontent.com/32474027/94214748-5db8a700-ff15-11ea-8ee6-8e500a9f9f9a.PNG" \></p>
 
 - **Kernel space**: This is a set of addresses where the kernel is hosted and where it runs. Kernel memory (or kernel space) is a memory range, owned by the kernel, protected by access flags, preventing any user apps from messing with the kernel (un)knowingly. On the other hand, the kernel can access the whole system memory, since it runs with the higher priority on the system. In kernel mode, the CPU can access the whole memory (both kernel space and user space).
 
-- **User space**: This is a set of addresses (locations) where normal programs (such as `gedit` and so on) are restricted to run in. You may consider it a sandbox or a jail, so that a user program can't mess with memory or any other resource owned by another program. In user mode, the CPU can only access memory tagged with user space access rights. The only way for a user app to run in the kernel space is through system calls. Some of these are `read`, `write`, `open`, `close`, `mmap`, and so on. User space code runs with lower priority. When a process performs a system call, a software interrupt is sent to the kernel, which turns on privileged mode so that the process can run in kernel space. When the system call returns, the kernel turns off the privileged mode and the process is jailed again.
+- **User space**: This is a set of addresses (locations) where normal programs (such as `gedit` and so on) are restricted to run in. You may consider it a sandbox or a jail, so that a user program can't mess with memory or any other resource owned by another program. In user mode, the CPU can only access memory tagged with user space access rights. The only way for a user app to run in the kernel space is through system calls. Some of these are `read`, `write`, `open`, `close`, `mmap`, and so on. User space code runs with lower priority. **When a process performs a system call, a software interrupt is sent to the kernel, which turns on privileged mode so that the process can run in kernel space**. When the system call returns, the kernel turns off the privileged mode and the process is jailed again.
 
 ## 2. Prepare
 
@@ -51,7 +51,7 @@
 - `scripts/`: This contains scripts and tools used during kernel development. There are other useful tools here.
 - `security/`: This directory contains the security framework code.
 - `sound/`: Audio subsystems code is here.
-- `usr/`: This currently contains the initramfs implementation.
+- **`usr/`: This currently contains the initramfs implementation.**
 
 ## 4. Kernel configuration
 - In most cases, there will be no need to start a configuration from scratch. There are default and useful configuration files available in each `arch/` directory, which you can use as a starting point:
