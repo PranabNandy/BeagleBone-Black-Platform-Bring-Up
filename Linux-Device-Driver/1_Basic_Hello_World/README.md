@@ -25,7 +25,7 @@ calls etc. (modular approach)
 - When you write a module separately (which is not approved and may be buggy), build and link it against the running kernel, then its called as **out of the tree module**.
 - Modules are built using **"kbuild"** which is the build system used by the Linux kernel.
 - Modules must use **"kbuild"** to stay compatible with changes in the build infrastructure and to pick up the right flags to GCC.
-- To build external modules, **you must have a prebuilt kernel source available** that contains the configuration and header files used in the build. ([The Third Stage: Generate Linux Image](https://github.com/nghiaphamsg/BeagleBone_Black_Embedded/tree/master/02_Gerenate_UBoot_RFS))
+- To build external modules, **you must have a prebuilt kernel source available** that contains the configuration and header files used in the build.
 
 ### 2.1.1 Out of tree module
 
@@ -101,14 +101,14 @@ my_char
   ├── main.c
   └── Makefile
 ```
-Step 1: Create a new folder in `/driver/char/<folder_name>/` and copy source c into here
+Step 1: Create a new folder in `/driver/char/<folder_name>/` **in the downloaded Linux(for BBB)** and copy source c into here
 ```shell
-neko@nekobot:~/linux_4_14/drivers/char$ mkdir my_char; cd my_char
-neko@nekobot:~/linux_4_14/drivers/char/my_char$ cp /01_Basic_Hello_World/main.c ./
+pranab@nekobot:~/linux_4_14/drivers/char$ mkdir my_char; cd my_char
+pranab@nekobot:~/linux_4_14/drivers/char/my_char$ cp /1_Basic_Hello_World/main.c ./
 ```
 Step 2: Create a `Kconfig` file and add below entries
 ```shell
-neko@nekobot:~/linux_4_14/drivers/char/my_char$ vi Kconfig
+pranab@nekobot:~/linux_4_14/drivers/char/my_char$ vi Kconfig
 ```
 ```text
 menu "My custom module"
@@ -119,21 +119,21 @@ endmenu
 ```
 Step 3: Create a `Makefile` file and add below entries
 ```shell
-neko@nekobot:~/linux_4_14/drivers/char/my_char$ vi Makefile
+pranab@nekobot:~/linux_4_14/drivers/char/my_char$ vi Makefile
 ```
 ```text
 obj-$(CONFIG_CUSTOM_HELLOWORD) += main.o
 ```
 Step 4: Add the local Kconfig entry to upper level Kconfig
 ```shell
-neko@nekobot:~/linux_4_14/drivers/char$ vi Kconfig
+pranab@nekobot:~/linux_4_14/drivers/char$ vi Kconfig
 ```
 ```text
 source "drivers/char/my_char/Kconfig"
 ```
 Step 5: add the local level Makefile to higher level Makefile
 ```shell
-neko@nekobot:~/linux_4_14/drivers/char$ vi Makefile
+pranab@nekobot:~/linux_4_14/drivers/char$ vi Makefile
 ```
 ```text
 obj-y				+= my_char
@@ -195,7 +195,7 @@ make[1]: Leaving directory '/usr/src/linux-headers-4.14.108-ti-r113'
 debian@beaglebone:~/ldd$ ls
 main.c	Makefile
 ```
-### 3.1.2 In tree module ([The Third Stage: Generate Linux Image](https://github.com/nghiaphamsg/BeagleBone_Black_Embedded/tree/master/02_Gerenate_UBoot_RFS))
+### 3.1.2 In tree module 
 - Build again linux kernel modules
 
 Step 1: Open menu configure
