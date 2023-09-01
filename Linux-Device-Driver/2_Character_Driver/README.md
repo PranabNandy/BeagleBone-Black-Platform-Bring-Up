@@ -5,10 +5,10 @@
 - Char devices: sensors, RTC, keyboard, serial port, parallel port,...etc.
 
 ## 1. Code exercise
-- Write a character driver to deal with a pseudo character device.
-- The pseudo-device is a memory buffer of some size (in case 512 byte).
-- The driver what you write must support reading/writing/seeking to this device .
-- Test the driver functionality by running user-level command such as echo, dd, cat and by writing user lever programs.
+- **Write a character driver to deal with a Pseudo Character Device.**
+- The pseudo-device is a **Memory Buffer** of some size (in case 512 byte).
+- The driver what you write must support **reading/writing/seeking** to this device .
+- Test the driver functionality by running user-level command such as **echo, dd, cat** and by writing **user lever programs**.
 - Write application running on user-level for test the driver functionality.
 
 ## 2. Connection establishment between device file access and the driver
@@ -47,7 +47,7 @@ alloc_chrdev_region(&device_number, 0, 1, "pcd_devices");
 ```
 
 ### Step 2: Create device files
-**- Initialize a cdev_init structure**
+**2.1 - Initialize a cdev_init structure**
 ```text
 void cdev_init (struct cdev *cdev, const struct file_operations *fops)
 ```
@@ -55,7 +55,7 @@ void cdev_init (struct cdev *cdev, const struct file_operations *fops)
 + **const struct file_operations \*fops**: the file operations for this device (open, read, write, lseek, mmap, flush,...)
 + `THIS_MODULE` is a macro which resolves in to "pointer to a struct module variable which corresponds to our current module"
 
-**- cdev_add - add a char device to the system**
+**2.2 - add a char device(pcd_cdev) to the system**
 ```text
 int cdev_add (struct cdev *p, dev_t dev, unsigned count)
 ```
