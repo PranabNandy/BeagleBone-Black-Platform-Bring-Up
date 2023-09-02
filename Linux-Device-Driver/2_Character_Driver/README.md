@@ -84,6 +84,8 @@ cdev_add(&pcd_cdev, device_number, 1);
 ## `Kernel Modules exposed device information to sysfs ......`
 ## `User Space i.e udev takes that information from sysfs`
 
+## `uevents are generated when Device Driver takes help of kernel API to dynamic creation of the Device File`
+
 ### Step 3: Create Device Files
 
 ![1](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/5e6ae2af-ba5e-4c4d-acee-9817dbddb118)
