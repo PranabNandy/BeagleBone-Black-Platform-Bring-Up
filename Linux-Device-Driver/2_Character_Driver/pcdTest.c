@@ -1,5 +1,5 @@
 /*
- * @brief: this file was made to check the character device
+ * @brief: This file was made to check the Pseudo Character Device
  * @author: PranabNandy
  * @date: 2023/09/26
  * @version: v0.1
@@ -24,14 +24,14 @@ int main() {
     int fd, ret;
     char option;
 
-    printf("Starting device test code example...\n");
+    printf("Starting PCD test code example...\n");
     fd = open(DEV_PATH, O_RDWR);
     if (fd < 0) {
         printf("Failed to open the device\n");
         return errno;
     }
 
-    printf("Type in a short string to send to the kernel module:\n");
+    printf("Type a short string to send to the kernel module:\n");
     scanf(" %[^\n]%*c", stringSend);
 
     ret = write(fd, stringSend, BUFF_SIZE);
