@@ -182,6 +182,6 @@ module_init(char_device_driver_init);
 module_exit(char_device_driver_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("NghiaPham");
+MODULE_AUTHOR("PranabNandy");
 MODULE_DESCRIPTION("Simple character driver to deal with a pseudo character device");
 MODULE_INFO(board,"Beaglebone Black rev.c");
