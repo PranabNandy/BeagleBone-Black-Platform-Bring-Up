@@ -20,6 +20,6 @@ module_init(helloworld_init);
 module_exit(helloworld_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("NghiaPham");
+MODULE_AUTHOR("PranabNandy");
 MODULE_DESCRIPTION("Simple hello world kernel module");
 MODULE_INFO(board,"Beaglebone black rev.c");
