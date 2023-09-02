@@ -127,9 +127,9 @@ device_pcd = device_create(class_pcd, NULL, device_number, NULL, "pcd");
 
 ```
 
-**`Major and Minor Mumber Assigned to the Actual HW Device ... that is controlled by the Driver`**
+### `Major and Minor Mumber Assigned to the Actual HW Device ... that is controlled by the Driver`
 
-**`Driver exports all the information about HW Device( decive name, major and minor number) to the sysfs by calling device_create`**
+### `Driver exports all the information about HW Device( decive name, major and minor number) to the sysfs by calling device_create`
 
 ### Step 4: Implement the driver’s file operation methods for open, read, write, lseek.
 - In this character driver we will give support to handle the below user level system call (open/close/read/write/llseek)
