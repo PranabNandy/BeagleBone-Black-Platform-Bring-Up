@@ -11,7 +11,16 @@
 - There will be only 1 implementation of open, read, write, release, and lseek driver methods.
 - That also means the driver should first determine which device is being accessed from the user space to fulfill the request
 
+  
+![Screenshot from 2023-09-03 11-34-49](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/1eed869d-b733-4bbf-bda3-3b125edabe3b)
+![Screenshot from 2023-09-03 12-09-44](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/9b3cf00f-9091-4eec-b7e7-7e5ef6d7a6d5)
+
+
 ## 2. Explore about device/driver data structure
+
+![Screenshot from 2023-09-03 11-35-31](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/b07ffbb7-9cd0-4cfa-b2cc-6d94becc52ea)
+![Screenshot from 2023-09-03 12-08-54](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/e91a1bad-4122-4ad4-99d7-2f054aac8524)
+
 
 - In the driver, we’ll maintain two structures:
     + Structure which holds driver’s private data
