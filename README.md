@@ -1,4 +1,5 @@
-# BeagleBone-Black-Platform-Bring-Up
+# Embedded System Development using BBB 
+### BBB is a SBC (Single Board Computer) - it contains an AM335x which is a SoC (System on Chip). Am335x has a Cortex-A8 (A 32 bit MPU) where we run Linux & other HLOSes.
 #### Beagle Bone Black Initial Boot up [Video](https://www.youtube.com/watch?v=R6c0kC25NRo&ab_channel=PranabNandy)
 
 	Beagle Black comes with a 1GHz AM3359 ARM Cortex A8 processor which uses ARMv7 instruction set
