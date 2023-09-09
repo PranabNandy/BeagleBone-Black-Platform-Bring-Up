@@ -38,6 +38,11 @@ You can refer to how I configure the following:
   + Defconfig name (v4.11.3) → omap2plus
   + Loadaddress: 0x80008000
   + Device tree source: am335x-boneblack
+  + ![Screenshot from 2023-09-09 15-44-09](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/32f3c61d-3433-4bbd-8fba-4dfb4eeaea24)
+  + ![Screenshot from 2023-09-09 15-45-21](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/443974b7-1789-479f-b79c-7a2824e243e9)
+
+ 
+  
   ![Screenshot from 2020-09-02 22-01-50](https://user-images.githubusercontent.com/32474027/91988890-cecbcb00-ed6a-11ea-95f1-735729d01468.png)
   
 - 6.Target packages: (you can enable function if you need, Ex: ssh (openssh),..)
