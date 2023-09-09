@@ -1,4 +1,4 @@
-**Atfer generated and now discuss directory**
+## Atfer generated Linux Kernel Image and Modules
 - File list out all the static loadable
 ```text
   lib/modules/4.4.155/modules.builtin
@@ -336,9 +336,7 @@ All those generated modules (step7) `*`.ko files should be tranfer to the [RFS (
 
 
 
-<h1> Busybox</h1>
-
-<h2> Step By Step How To Using Busybox Create RFS </h2>
+<h1> The Fourth Stage: Generate Busybox File system</h1>
 
 
 #### Step 1: Dowload busybox
