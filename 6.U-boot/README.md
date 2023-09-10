@@ -150,7 +150,7 @@ Great now you will end up with a file “initramfs” which also includes the ub
 
 
 
-## Booting BBB over Serial Port (UART Port)
+## Booting BBB over Serial Port (UART0 peripheral Port)
 
 #### Peripheral Booting
 
@@ -160,6 +160,10 @@ The ROM Code can boot from three different peripheral interfaces:
 -  UART: 115.2Kbps, 8 bits, no parity, 1 stop bit, no flow control
 
 The purpose of booting from a peripheral interface is to download a boot image from an external host (typically a PC). This booting method is mostly used for programming flash memories connected to the device (e.g. in the case of initial flashing, firmware update or servicing).
+
+- The ROM code will ping the host **10 times** in **3s to start** x-modem transfer. If host does not respond, **UART boot will timeout**.
+
+- **115200** is the baudrate that **ROM boot loader expects SPL** from Host Machine.
 
 - ![Screenshot from 2023-09-10 21-17-38](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/6fd7d4b5-b698-41c1-9d7e-48fe6e0bf487)
 - ![Screenshot from 2023-09-10 19-10-55](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/330bd88a-84f4-4437-b82b-e573c6420fd9)
