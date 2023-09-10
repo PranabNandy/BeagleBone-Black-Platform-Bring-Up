@@ -1,6 +1,31 @@
 <h1> Linux Device Driver Using BeagleBone Black </h1>
 
-## 1. Introduce
+## 1. Introduction of Linux Source Tree
+
+![Screenshot from 2023-09-10 21-42-34](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/cd76d6bf-083d-43a5-a1db-45c9fe8c5b2e)
+
+![Screenshot from 2023-09-10 22-37-44](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/f01fe134-e0e7-4005-93eb-2cce3d44a1f5)
+![Screenshot from 2023-09-10 21-47-17](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/40ae4626-8961-435f-ac96-ed6801492566)
+
+## CPU Specific Arm Architecture Codes 
+
+![Screenshot from 2023-09-10 21-43-50](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/cfaac292-a044-4fae-bf59-394c6523e5d0)
+![Screenshot from 2023-09-10 21-44-42](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/2a706113-fb77-4cd3-bd74-391ef58ebce7)
+
+![Screenshot from 2023-09-10 21-46-41](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/63b7d847-f38c-4208-aef3-d148afcb9233)
+
+## Here from dtb file they match the String "dt_compact" to decide the specific Board in the board-generic.c file
+
+![Screenshot from 2023-09-10 22-17-04](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/72ebd258-5e12-467c-bfd3-efe510b05493)
+
+## Some common Device Driver in Sitara family by TI
+
+![Screenshot from 2023-09-10 22-20-12](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/8e8cbb71-6342-45c1-adc6-27128ec94933)
+
+## Some Top level Driver can in-build Module where its sub-driver can be Dynamic Loadable Module
+![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/7d156644-2612-43ac-a260-98d8b1540491)
+
+## 2.Linux Device Driver
 
 - Device driver is a piece of code that configures and manages a device. 
 - The device driver code knows, how to configure the device, sending data to the device, and it knows how to process requests which originate from the device. 
@@ -17,21 +42,6 @@
 
 - **User space**: This is a set of addresses (locations) where normal programs (such as `gedit` and so on) are restricted to run in. You may consider it a sandbox or a jail, so that a user program can't mess with memory or any other resource owned by another program. In user mode, the CPU can only access memory tagged with user space access rights. The only way for a user app to run in the kernel space is through system calls. Some of these are `read`, `write`, `open`, `close`, `mmap`, and so on. User space code runs with lower priority. **When a process performs a system call, a software interrupt is sent to the kernel, which turns on privileged mode so that the process can run in kernel space**. When the system call returns, the kernel turns off the privileged mode and the process is jailed again.
 
-## 2. Prepare
-
-| Software              | Hardware               |       
-|-----------------------|------------------------|
-| ubuntu 18.04/20.04    | Beaglebone Black Rev.C |
-| cross compile 7 or 8  | cable, led, lcd        |
-| vsc or vim            |
-
-
-| Reference                                                                               |
-|-----------------------------------------------------------------------------------------|
-| [AM335x ARM® Cortex™-A8 Microprocessors (MPUs) Technical Reference Manual](https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/790/AM335x_5F00_techincal_5F00_reference_5F00_manual.pdf) |
-| [AM335x Datasheet](https://www.ti.com/lit/ds/sprs717l/sprs717l.pdf?ts=1598362140689&ref_url=https%253A%252F%252Fwww.google.com%252F) |
-| [Beagleboard Cape Expansion Headers](https://elinux.org/Beagleboard:Cape_Expansion_Headers)|
-| [Device Tree Document](https://www.devicetree.org/specifications/) |
 
 ## 3. Source organization
 

@@ -1,6 +1,7 @@
 <h1> U-boot </h1>
 
 ## U-boot Commands
+![Screenshot from 2023-09-10 23-14-29](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/e2ac0887-1b98-46b8-a7df-0a4e10ec7ea8)
 
 ### After you load MLO followed u-boot.img, a terminal will appear 
 
@@ -26,6 +27,8 @@
 ------- Multi commands -----------------------
 mmcboot=echo Booting from microSD ..; setenv autoload no ; run bootsettings ; 
 ```
+
+-  ![Screenshot from 2023-09-10 18-22-17](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/7d45376e-70b6-41f9-a434-688865bc6bfd)
 
 
 ```
@@ -89,6 +92,9 @@ Let’s understand this with an example.
  1) You can make initramfs “built in” in to the Linux Kernel during compilation , so when the Linux starts booting , it will place the initramfs in the RAM and mounts as the initial root file system and continues.
 
  2) You can load the initramfs from some other sources in to the RAM of your board and tell the Linux Kernel about it (that is , at  what RAM address initramfs is present ) via the kernel boot arguments. 
+--  ![Screenshot from 2023-09-10 23-25-05](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/a4cb3b0a-1453-4b95-9f96-658b95d8d159)
+--  ![Screenshot from 2023-09-10 23-25-29](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/1fb1b3eb-c878-44b7-b56b-d8c5cd6cece0)
+
 
 
 
@@ -144,9 +150,28 @@ Great now you will end up with a file “initramfs” which also includes the ub
 
 
 
+## Booting BBB over Serial Port (UART0 peripheral Port)
+
+#### Peripheral Booting
 
 
+The ROM Code can boot from three different peripheral interfaces:
+-  EMAC: 1000/100/10 Mbps Ethernet, using standard TCP/IP network boot protocols BOOTP and TFTP
+-  USB: Full speed, client mode
+-  UART: 115.2Kbps, 8 bits, no parity, 1 stop bit, no flow control
 
+The purpose of booting from a peripheral interface is to download a boot image from an external host (typically a PC). This booting method is mostly used for programming flash memories connected to the device (e.g. in the case of initial flashing, firmware update or servicing).
+
+- The ROM code will ping the host **10 times** in **3s to start** x-modem transfer. If host does not respond, **UART boot will timeout**.
+
+- **115200** is the baudrate that **ROM boot loader expects SPL** from Host Machine.
+
+- **ROM bootloader** does not support booting over **UART1 Peripheral** 
+
+- ![Screenshot from 2023-09-10 21-17-38](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/6fd7d4b5-b698-41c1-9d7e-48fe6e0bf487)
+- ![Screenshot from 2023-09-10 19-10-55](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/330bd88a-84f4-4437-b82b-e573c6420fd9)
+
+- ![Screenshot from 2023-09-10 23-15-24](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/ec511a55-8090-40ff-be4a-b7cf376bee4f)
 
 
 
