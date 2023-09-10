@@ -21,6 +21,9 @@ I downloaded in Windows 10 and flash the rootfs(am335x-debian-11-7-2023-08-05-4g
 ----------------------------------------------------------------------------------------------------------------------
 # Enable Internet over USB
 ```
+debian@BeagleBone:~$ cd /opt/script/boot/
+-----> Here the usb0 and usb1 over ethernet scripts are present
+
 debian@BeagleBone:~$ sudo vi /etc/resolv.conf
 
 nameserver 8.8.8.8
