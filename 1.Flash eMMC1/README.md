@@ -1,5 +1,8 @@
 <h1> Flash eMNC1 </h1>
 
+#### Check To check debian latest Image 
+-  `$ lsb_release -da`
+
 Download latest Debain image from here https://www.beagleboard.org/distros
 
 I used this one https://www.beagleboard.org/distros/am335x-debian-11-7-2023-08-05-4gb-emmc-iot-flasher
