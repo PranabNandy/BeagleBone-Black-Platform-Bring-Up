@@ -41,7 +41,7 @@ Everytime you restart the system you need to execute Target 3rd command and Host
 ```
 pranab@pranab-IdeaPad-5-15ITL05:~/$sudo ./usbnet.sh
 
-usbnet.sh
+usbnet.sh    ( In Host, iptable settings to share internet between wifi and ethernet)
 ----------------
 #!/bin/bash
 ##To run this script do

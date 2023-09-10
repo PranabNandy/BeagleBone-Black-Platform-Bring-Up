@@ -1,6 +1,23 @@
 
 # BeagleBoneBlack
 
+![Screenshot from 2023-09-10 11-50-32](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/4e2654ec-c2b2-463d-9735-2a0e1be3d1ea)
+
+### GPMC  of the AM335X SOC used for 
+-	Interfacing of external NAND flash
+-	Interfacing of externel NOR flash
+-	Interfacing of external SRAM
+
+### EMIF of the AM335X SOC used for 
+- Interfacing of Dynamic RAM (DDR)
+
+### In BBB Rev.C EEPROM is connected to  
+-	A single **4KB EEPROM** is provided on **I2C0**. **EEPROM** holds the board information that includes board name, serial number, and revision information
+
+### There is no DSP co-processors in AM335x 
+
+  
+
 The AM335x is complex piece of hardware, but has limited internal RAM (128 kB)
 
 Because of this limited amount of RAM, multiple bootloader stages are needed
