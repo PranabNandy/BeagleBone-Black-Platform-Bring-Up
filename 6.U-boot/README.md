@@ -154,6 +154,7 @@ Great now you will end up with a file “initramfs” which also includes the ub
 
 #### Peripheral Booting
 
+
 The ROM Code can boot from three different peripheral interfaces:
 -  EMAC: 1000/100/10 Mbps Ethernet, using standard TCP/IP network boot protocols BOOTP and TFTP
 -  USB: Full speed, client mode
@@ -164,6 +165,8 @@ The purpose of booting from a peripheral interface is to download a boot image f
 - The ROM code will ping the host **10 times** in **3s to start** x-modem transfer. If host does not respond, **UART boot will timeout**.
 
 - **115200** is the baudrate that **ROM boot loader expects SPL** from Host Machine.
+
+- **ROM bootloader** does not support booting over **UART1 Peripheral** 
 
 - ![Screenshot from 2023-09-10 21-17-38](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/6fd7d4b5-b698-41c1-9d7e-48fe6e0bf487)
 - ![Screenshot from 2023-09-10 19-10-55](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/330bd88a-84f4-4437-b82b-e573c6420fd9)
