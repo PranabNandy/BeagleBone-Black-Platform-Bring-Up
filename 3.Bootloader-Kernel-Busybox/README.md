@@ -372,6 +372,14 @@ or
 ```shell
 ~/RFS_Static/bin$ file busybox
 ```
+
+
+
+#### Step 6: Install Linux Dynamic Modules inside Busybox
+```shell
+  make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=/home/pranab/busybox_FS/ modules_install
+```
+
 --------------------------------------------------------------------------------------------
 **ERROR**
 ```text
