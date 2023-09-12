@@ -174,4 +174,84 @@ The purpose of booting from a peripheral interface is to download a boot image f
 - ![Screenshot from 2023-09-10 23-15-24](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/ec511a55-8090-40ff-be4a-b7cf376bee4f)
 
 
+# Booting BeagleBone-Black over TFTP Protocol
 
+**TFTP stands for Trivial File Transfer Protocol which transfer files between TFTP server and TFTP client.**
+
+Step 1:  First on your Ubuntu host run the below command using your terminal program.
+
+This command installs the tftpd , xinetd(eXtended InterNET Daemon) . tftpd is a server for the Trivial File Transfer Protocol.
+
+```$ sudo apt-get install xinetd tftp tftpd```
+
+Step 2 : Create/Open the file “tftp” in the below directory
+
+```$ sudo vi /etc/xinetd.d/tftp    and put the below entry in to this file  and save it```
+
+```
+service tftp
+{
+protocol = udp
+port = 69
+socket_type = dgram
+wait = yes
+user = nobody
+server = /usr/sbin/in.tftpd
+server_args = /var/lib/tftpboot -s
+disable = no
+}
+```
+
+Step3 : Create a folder /var/lib/tftpboot and execute below commands
+
+```
+$sudo mkdir /var/lib/tftpboot
+
+$sudo chmod -R 777 /var/lib/tftpboot
+
+$sudo chown -R nobody /var/lib/tftpboot
+
+Step 4: Restart the xinetd service. Now the xinetd daemon is running.
+
+$ sudo /etc/init.d/xinetd restart
+
+
+
+$ sudo ifconfig enp1s0 192.168.27.1
+```
+
+----------
+
+```
+# setenv serverip 192.168.27.1
+
+# setenv ipaddr 192.168.27.2
+
+# tftpboot 0x82000000 uImage
+
+# tftpboot 0x88000000 am335x-boneblack.dtb
+
+# tftpboot 0x88080000 initramfs
+
+# setenv bootargs console=ttyO0,115200 root=/dev/ram0 rw initrd=0x88080000
+
+# bootm 0x82000000 0x88000000 0x88080000
+
+
+# tftp -r helloworld -g 192.168.27.1
+
+# ifconfig eth0 192.168.27.1
+
+```
+
+**uEnv.txt** for this case
+```
+console=ttyO0,115200n8
+ipaddr=192.168.7.2
+serverip=192.168.7.1
+absolutepath=/var/lib/tftpboot/
+rootpath=/srv/nfs/bbb,nolock,wsize=1024,rsize=1024 rootwait rootdelay=5
+loadtftp=echo Booting from network ...;tftpboot ${loadaddr} ${absolutepath}uImage; tftpboot ${fdtaddr} ${absolutepath}am335x-boneblack.dtb
+netargs=setenv bootargs console=${console} root=/dev/nfs rw nfsroot=${serverip}:${rootpath} 
+uenvcmd=setenv autoload no; run loadtftp; run netargs; bootm ${loadaddr} - ${fdtaddr}
+```
