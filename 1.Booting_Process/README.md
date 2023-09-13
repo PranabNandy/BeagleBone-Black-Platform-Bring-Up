@@ -19,7 +19,7 @@
 - System clock configuration using PLL
 ![Screenshot from 2020-08-26 20-54-30](https://user-images.githubusercontent.com/32474027/91301577-1dfc8380-e7e0-11ea-8ad2-2376929fcd97.png)
 - Search Memory devices or other bootable interface for MLO or SPL
-- Copy [MLO/SPL](https://github.com/nghiaphamsg/BeagleboneBlack_Debian/tree/master/Generate_MLO_RFS/Genenal) into the internal SRAM of the chip
+- Copy [MLO/SPL] into the internal SRAM of the chip
 - Execute "MLO" or "SPL"\
 **Note**: The Public ROM Code is physically located at the address 20000h.
 
@@ -35,17 +35,16 @@
 - Reconfigures the PLL to desired value.
 - Initializes the DDR registers to use the DDR memory.
 - Does muxing configurations of boot peripherals pin.
-- Copies the [u-boot.img](https://github.com/nghiaphamsg/BeagleboneBlack_Debian/tree/master/Generate_MLO_RFS/Genenal) into the DDR memory and passes control to it
+- Copies the [u-boot.img] into the DDR memory and passes control to it
 ![Screenshot from 2020-08-30 17-52-16](https://user-images.githubusercontent.com/32474027/91655189-e5172400-eae9-11ea-8af4-ec693a7a5425.png)
 
 ## Phase 3 U-Boot
 - Initialize some of the peropherals like I2C, NAND, FLASH, ETHERNET, UART, USB, MMC,..etc. Because it supports loading kernel from all these peripherals.
 - Load the Linux kernel image form various boot sources to the DDR memory of the board (Boot sources: USB, eMMC, SD card, ethernet, serial port, NAND, flash,etc).
 - Passing of boot arguments to the kernel.\
-- Change the boot behavior of the u-boot by using a file called [uEnv.txt](https://github.com/nghiaphamsg/BeagleboneBlack_Debian/blob/master/Generate_MLO_RFS/Genenal/uEnv.txt)
-
+- Change the boot behavior of the u-boot by using a file called [uEnv.txt]
 #### Show detail
-**Step 1:** u-boot.img looking for [uImage](https://github.com/nghiaphamsg/BeagleboneBlack_Debian/tree/master/Generate_MLO_RFS/Genenal) (Kernel image), uImage is nothing but zImage plus u-boot header
+**Step 1:** u-boot.img looking for [uImage] (Kernel image), uImage is nothing but zImage plus u-boot header
 
   ![Screenshot from 2020-08-30 17-57-48](https://user-images.githubusercontent.com/32474027/91655261-5a82f480-eaea-11ea-839d-cef48d6a2011.png)
 
