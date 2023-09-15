@@ -40,7 +40,7 @@
 
 ## Instruction list 
 1. [CGI using C++ on the BeagleBone](http://derekmolloy.ie/beaglebone-cgicc/)
-2. [Introduction to the BeagleBone Black Device Tree](https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays)\
+2. [Introduction to the BeagleBone Black Device Tree](https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays)
 4. [The Beaglebone Black and Device Tree Overlays](http://www.ofitselfso.com/BeagleNotes/Beaglebone_Black_And_Device_Tree_Overlays.php)
 3. [Sharing internet using Network-Over-USB in BeagleBone Black](https://elementztechblog.wordpress.com/2014/12/22/sharing-internet-using-network-over-usb-in-beaglebone-black/)
 
