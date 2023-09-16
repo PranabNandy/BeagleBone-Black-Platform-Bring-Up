@@ -125,6 +125,20 @@ The kernel initializes and mounts the root filesystem.
 By default, the root filesystem is contained in the second partition (mmcblk0p2) of the microSD card, formatted for an ext3 file system.
 
 
+Serial setup
+=================
+
+BeagleBone Black uses a serial debug port to communicate with the host machine. We will use minicom as a serial terminal client to communicate over the serial port. To set up minicom, perform the following steps:
+
+1. Run this setup command as a privileged user:
+
+    $  sudo minicom -s
+
+2. Press E to set the baud rate. Use the A and B keys to navigate the baud rate values. A corresponds to next and B to previous. Keep pressing B till you get 115200 8N1. Then, press Enter to choose this setting and go back to the previous menu.
+
+3. Next, we need to press F and G to change enablement statuses of hardware flow control and software flow control. Both need to be set to No.
+
+4. Choose Save setup as dfl to avoid reconfiguring every time and choose Exit to go to minicom. Don't exit from it if you want to observe whether there is any activity on the serial port.
 
 
 
