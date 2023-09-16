@@ -1,0 +1,2 @@
+# GPIO pins in BBB 
+
