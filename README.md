@@ -42,7 +42,7 @@ Computer hardware/software components, then it is called as a SBC. Am335x has a 
 | 74HC595               | Minicom       | [MPU-6000/MPU-6050 Product Specification](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf)|
 | TMP36                 | GParted       | [ADXL345 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf)|
 | FT232RL USB Serial    |               | [TMP36 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf)|
-| SD card (>4GB)        |               | [74HC595 Datasheet](https://www.onsemi.com/pub/Collateral/MC74HC595-D.PDF)|
+| SD card (>4GB)        |               | [16x2 LCD HD44780 Datasheet](https://www.sparkfun.com/datasheets/LCD/HD44780.pdf)|
 | RTC-DS3231            |               | [RTC-DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf) |
 | GPS-Neo6M             |		| [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)|
 
