@@ -24,7 +24,7 @@
 | Hardware              | Sortware      | Reference                                                                                |
 |-----------------------|---------------|------------------------------------------------------------------------------------------|
 | Beaglebone Black Rev.C| Ubuntu 18.04  | Exploring BeagleBone Tools and Techniques for Building with Embeddded Linux ®Derek Molloy|
-| MPU6050               | VSC or Vim    | [AM335x ARM® Cortex™-A8 Microprocessors (MPUs) Technical Reference Manual](https://e2e.ti.com/cfs-file/__key/communityserver-discussions-components-files/790/AM335x_5F00_techincal_5F00_reference_5F00_manual.pdf)|
+| MPU6050               | VSC or Vim    | [AM335x ARM® Cortex™-A8 Microprocessors (MPUs) Technical Reference Manual](https://www.ti.com/lit/ug/spruh73q/spruh73q.pdf?ts=1694841159478&ref_url=https%253A%252F%252Fwww.google.com%252F)|
 | ADXL345               | Cross compile | [AM335x Datasheet](https://www.ti.com/lit/ds/sprs717l/sprs717l.pdf?ts=1598362140689&ref_url=https%253A%252F%252Fwww.google.com%252F)|
 | Button                | BusyBox       | [Beagleboard Cape Expansion Headers](https://elinux.org/Beagleboard:Cape_Expansion_Headers)|  
 | Leds                  | Buildroot     | [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)|
