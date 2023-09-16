@@ -1,5 +1,8 @@
 # Embedded System Development using BBB 
-### BBB is a SBC (Single Board Computer) - it contains an AM335x which is a SoC (System on Chip). Am335x has a Cortex-A8 (A 32 bit MPU) where we run Linux & other HLOSes.
+BBB is a SBC (Single Board Computer) 
+
+- When a single piece of circuit board, comprises most of the personal
+Computer hardware/software components, then it is called as a SBC. Am335x has a **Cortex-A8 (A 32 bit MPU)** where we run Linux & other HLOSes.
 #### Beagle Bone Black Initial Boot up [Video](https://www.youtube.com/watch?v=R6c0kC25NRo&ab_channel=PranabNandy)
 
 
@@ -18,6 +21,14 @@
 - Using HTTP, the sensors can push numeric or alphanumeric data to the server, where it can be processed and visualized.
 - Beaglebone networking
 - Serial log (UART) used minicom tool
+
+
+## BBB uses TI’s AM355x SOC 
+![Screenshot from 2023-09-16 12-10-15](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/4c4607a6-96f2-4faa-8fed-4b81acda59bd)
+
+-	SOC stands for System on Chip. As the name indicates, a single chip contains most of the essential **computing /communication /storage engine** of the **computing world**, like Flash memory, Graphics processing engine, the image processing engine, the USB communication engine, RS232, SPI, I2C engine and much more. The heart of the SOC is a processor.
+-	For example **AM355x SOC** is powered by **ARM cortex A8 processor**.
+
 
 ## Prepare
 
@@ -51,6 +62,11 @@
 -	You can also install Android relatively easy onto here so if that’s a deal breaker then Beaglebone is for you. However, I did find Android a little slow on the Beaglebone. I would personally pick the Beaglebone Black if I were looking into more device or circuitry based projects.
 -	Most of the companies ,what they do is , **they take the BBB hardware design, like part numbers, schematics , BOM etc and they add customer specific
 add-ons or features then release the product to the market.**
+
+### Use Case of Board Bring Up Activity
+
+-	When the hardware team is working on the new hardware, the software team will not sit idle, they test their software, drivers, and applications on
+reference ( such as Beaglebone-Black ) board, which greatly reduces the time to release the final product in the market.
 
 #### We will focus on upstream components:
 
