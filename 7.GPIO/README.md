@@ -2,7 +2,8 @@
 
 
 ## P8 Expension Header
-
+-  Software Pin number is given by Kernel
+  
   | Header Pin Number | Software Pin Number |
   |:----------------:|----------:|
   | P8-1    | GNDs     |
