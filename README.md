@@ -27,13 +27,13 @@
 | MPU6050               | VSC or Vim    | [AM335x ARM® Cortex™-A8 Microprocessors (MPUs) Technical Reference Manual](https://www.ti.com/lit/ug/spruh73q/spruh73q.pdf?ts=1694841159478&ref_url=https%253A%252F%252Fwww.google.com%252F)|
 | ADXL345               | Cross compile | [AM335x Datasheet](https://www.ti.com/lit/ds/sprs717l/sprs717l.pdf?ts=1598362140689&ref_url=https%253A%252F%252Fwww.google.com%252F)|
 | Button                | BusyBox       | [Beagleboard Cape Expansion Headers](https://elinux.org/Beagleboard:Cape_Expansion_Headers)|  
-| Leds                  | Buildroot     | [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)|
+| Leds                  | Buildroot     |  [BBB System Reference Manual](https://cdn.sparkfun.com/datasheets/Dev/Beagle/e14%20BBB_SRM_rev%200.9.pdf) |     
 | 74HC595               | Minicom       | [MPU-6000/MPU-6050 Product Specification](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf)|
 | TMP36                 | GParted       | [ADXL345 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.pdf)|
 | FT232RL USB Serial    |               | [TMP36 Datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/TMP35_36_37.pdf)|
 | SD card (>4GB)        |               | [74HC595 Datasheet](https://www.onsemi.com/pub/Collateral/MC74HC595-D.PDF)|
-| RTC-DS3231            |               | [RTC-DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf) 
-| GPS-Neo6M             |
+| RTC-DS3231            |               | [RTC-DS3231](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf) |
+| GPS-Neo6M             |		| [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2](https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf)|
 
 ## How to connecting BBB to PC using external USB TO UART converter
 ![Screenshot from 2020-08-25 22-18-12](https://user-images.githubusercontent.com/32474027/91179255-3c4f7a00-e721-11ea-8006-a49083c3fb5e.png)
