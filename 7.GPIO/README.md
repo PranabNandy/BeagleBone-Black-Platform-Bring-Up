@@ -1,6 +1,84 @@
 # GPIO pins in BBB 
 
 
+## Purpose of the Peripheral
+The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module provides **32 dedicated GPIO pins**. So the general-purpose interface supports up to **128 (4 × 32) pins**. These pins can be configured for the following applications:
+- Data input (capture)/output (drive)
+- Keyboard interface with a debounce cell
+- Interrupt generation in active mode upon the detection of external events.
+- Wake-up request generation in idle mode upon the detection of external events.
+
+### 128 GPIOs Pin supported but only in expension header it is 44(p8)+ 23(p9) = 67
+
+```
+/sys/kernel/debug#
+
+# cat gpio
+
+>>> P8_15 ===> gpio1[5] ==> GPIO37 
+>>> GPIO1[6] = 1*32 +6 = GPIO38
+>>> GPIO1_21 = 1*32 + 21 ==> 53 ( kernel friendly name)
+
+# cat /sys/kernel/debug/pinctrl/44e20800.pinmux/pin
+( Align with kernel assign pin number) ----> (This value matters to us)
+
+/sys/kernel/debug/pinctrl/44e10800.pinmux#
+
+# cat pins | more
+
+# cat pinmux-pins
+
+# grep pins | grep "pin 28"
+
+# cat pingroups | more 
+```
+
+### User Leds
+```
+/sys/class/leds/#
+
+# ls
+
+# cd beaglebone:green:usr3
+
+# ls
+
+# cat trigger
+
+# echo "none" > trigger
+
+# echo "timer" > trigger
+
+# echo "1000" > delay_on
+
+# echo "5000" > delay_off
+
+# echo "mmc1" > trigger
+
+# cd /home/debian/  
+
+# vi test.cpp
+
+# sync
+```
+
+
+### GPIO Pins Add and control
+```
+/sys/class/gpio/# echo 87 > export
+
+/sys/class/gpio/gpio87# ls
+
+/sys/class/gpio/gpio46# cat direction
+
+# echo "out" > direction
+
+# echo 1 > value  (LED is on)
+
+# echo 0 > value
+```
+
+
 ## P8 Expension Header
 -  Software Pin number is given by Kernel
   
