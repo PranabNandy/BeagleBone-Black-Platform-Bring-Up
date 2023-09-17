@@ -33,6 +33,10 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 
 # cat pingroups | more 
 ```
+
+#### Pin Multiplexing is used ---- 1 pin used for 8 purposes
+
+
 #### pad (pin) configuration register are present at offset 800h
 #### pad config reg starts
                           = BASE_ADDS(of control module engine register) + 800h ;
