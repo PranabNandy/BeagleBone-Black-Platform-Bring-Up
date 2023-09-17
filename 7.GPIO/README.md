@@ -1,5 +1,6 @@
 # GPIO pins in BBB 
 
+![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d3955bf7-6ddb-4cbc-bf91-fe151acbc733)
 
 ## Purpose of the Peripheral
 The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module provides **32 dedicated GPIO pins**. So the general-purpose interface supports up to **128 (4 × 32) pins**. These pins can be configured for the following applications:
@@ -32,6 +33,13 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 
 # cat pingroups | more 
 ```
+#### pad (pin) configuration register are present at offset 800h
+#### pad config reg starts
+                          = BASE_ADDS(of control module engine register) + 800h ;
+                          = 0x44E1_0000  
+![Screenshot from 2023-09-16 19-28-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/a27a39fe-daa7-4275-81e4-70bb8ec1c74c)
+
+
 
 ### User Leds
 ```
