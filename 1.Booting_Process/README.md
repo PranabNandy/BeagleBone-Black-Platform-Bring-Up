@@ -1,5 +1,9 @@
 <h1> Start-up and Configuration <h1>
 
+### Why don't uboot hands off control to linux kernel itself instead of boot strap loader ?
+-  Because linux will be in compressed mode, boot strap mode first has to be called to uncompress and relocate the kernel.
+-  Boot strap loader is arch dependent
+
 ## Stage Boot of BBB
 ![Screenshot from 2020-08-26 21-08-40](https://user-images.githubusercontent.com/32474027/91302062-d7f3ef80-e7e0-11ea-9b73-5ed2fa21825a.png)
 
