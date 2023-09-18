@@ -35,6 +35,7 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 ```
 
 #### Pin Multiplexing is used ---- 1 pin used for 8 purposes
+![Screenshot from 2023-09-16 21-22-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/fe6affd0-86d8-4d88-a67a-ba4d7a49d170)
 
 
 #### pad (pin) configuration register are present at offset 800h
