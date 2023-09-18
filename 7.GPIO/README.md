@@ -75,6 +75,34 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 # sync
 ```
 
+<p align="center"> <img width="900" height="500" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/4531afd3-ef3d-4baa-be47-a21521017157" /> </p>
+
+#### p8_16 ==> Resister ==> +ve 
+#### p8_1  ==>  GND     ==> -ve
+
+### External Red Green Yellow Leds
+```
+debian@BeagleBone:/sys/class/gpio/gpio46$ cat label 
+P8_16
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo "out" > direction 
+
+debian@BeagleBone:/sys/class/gpio/gpio46$ cat value 
+0
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 1 >value
+
+debian@BeagleBone:/sys/class/gpio/gpio46$ cat active_low 
+0
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 1 > active_low 
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 1 > value 
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 0 > value
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 0 > active_low 
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 1 > value
+debian@BeagleBone:/sys/class/gpio/gpio46$ echo 0 > value
+```
+
+
+<p align="center"> <img width="900" height="500" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/ae4d8188-87d7-4e77-8a9f-a74644b6b492" /> </p>
+
 
 ### GPIO Pins Add and control
 ```
