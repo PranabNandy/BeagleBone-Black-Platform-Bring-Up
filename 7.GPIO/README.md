@@ -1,5 +1,5 @@
 # GPIO pins in BBB 
-
+### 7 Seven Display Demo [Video](https://www.youtube.com/watch?v=ViHP4JsHoCw&ab_channel=PranabNandy)
 ![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d3955bf7-6ddb-4cbc-bf91-fe151acbc733)
 
 ## Purpose of the Peripheral
