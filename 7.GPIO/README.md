@@ -1,7 +1,19 @@
 # GPIO pins in BBB 
+### 7 Seven Display Demo [Video](https://www.youtube.com/watch?v=ViHP4JsHoCw&ab_channel=PranabNandy)
 
-![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d3955bf7-6ddb-4cbc-bf91-fe151acbc733)
+<p align="center"> <img width="900" height="500" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d3955bf7-6ddb-4cbc-bf91-fe151acbc733"  /> </p>
 
+### SOC Pin R9 ( ZCZ pin map on the Datasheet ) is connection to Board P9_3 Expansion header
+
+- #### Pin details are there in the Datasheet of SOC
+- #### Register details are there in the TRM
+-  Control module --> register ---> **conf_** means **Pad(Pin) configuration register**
+-  When a Pin is used in one functionality then it can not be used in another functionality unless you reconfigure it (**mode setting or pad configuration**)  
+#### pad (pin) configuration register are present at offset 800h
+#### pad config reg starts
+                          = BASE_ADDS(of control module engine register) + 800h ;
+                          = 0x44E1_0000  
+                          
 ## Purpose of the Peripheral
 The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module provides **32 dedicated GPIO pins**. So the general-purpose interface supports up to **128 (4 × 32) pins**. These pins can be configured for the following applications:
 - Data input (capture)/output (drive)
@@ -10,6 +22,7 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 - Wake-up request generation in idle mode upon the detection of external events.
 
 ### 128 GPIOs Pin supported but only in expension header it is 44(p8)+ 23(p9) = 67
+![Screenshot from 2023-09-19 21-58-22](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/23339576-17df-4150-af27-9188da24a24c)
 
 ```
 /sys/kernel/debug#
@@ -35,13 +48,10 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 ```
 
 #### Pin Multiplexing is used ---- 1 pin used for 8 purposes
-![Screenshot from 2023-09-16 21-22-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/fe6affd0-86d8-4d88-a67a-ba4d7a49d170)
+
+<p align="center"> <img width="800" height="400" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d4155bb1-c242-4647-98d7-925f9e3751a2"  /> </p>
 
 
-#### pad (pin) configuration register are present at offset 800h
-#### pad config reg starts
-                          = BASE_ADDS(of control module engine register) + 800h ;
-                          = 0x44E1_0000  
 ![Screenshot from 2023-09-16 19-28-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/a27a39fe-daa7-4275-81e4-70bb8ec1c74c)
 
 
@@ -77,7 +87,7 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 
 <p align="center"> <img width="900" height="500" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/4531afd3-ef3d-4baa-be47-a21521017157" /> </p>
 
-#### p8_16 ==> Resister ==> +ve 
+#### p8_16 (output low voltage GPIO pin)  ==> Resister ==> +ve 
 #### p8_1  ==>  GND     ==> -ve
 
 ### External Red Green Yellow Leds
@@ -224,3 +234,6 @@ debian@BeagleBone:/sys/class/gpio/gpio46$ echo 0 > value
   | P9-44   | """"""""     |
   | P9-45   | """"""""      |
   | P9-46   | """"""""      |
+
+
+![Screenshot from 2023-09-19 01-20-57](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/2cb67cb1-8e13-4457-bfd5-85009c6a0aa3)
