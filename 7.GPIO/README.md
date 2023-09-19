@@ -77,7 +77,7 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 
 <p align="center"> <img width="900" height="500" src="https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/4531afd3-ef3d-4baa-be47-a21521017157" /> </p>
 
-#### p8_16 ==> Resister ==> +ve 
+#### p8_16 (output low voltage GPIO pin)  ==> Resister ==> +ve 
 #### p8_1  ==>  GND     ==> -ve
 
 ### External Red Green Yellow Leds
@@ -224,3 +224,6 @@ debian@BeagleBone:/sys/class/gpio/gpio46$ echo 0 > value
   | P9-44   | """"""""     |
   | P9-45   | """"""""      |
   | P9-46   | """"""""      |
+
+
+![Screenshot from 2023-09-19 01-20-57](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/2cb67cb1-8e13-4457-bfd5-85009c6a0aa3)
