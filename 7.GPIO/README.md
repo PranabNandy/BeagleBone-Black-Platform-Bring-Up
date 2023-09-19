@@ -2,6 +2,17 @@
 ### 7 Seven Display Demo [Video](https://www.youtube.com/watch?v=ViHP4JsHoCw&ab_channel=PranabNandy)
 ![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/d3955bf7-6ddb-4cbc-bf91-fe151acbc733)
 
+### SOC Pin R9 ( ZCZ pin map on the Datasheet ) is connection to Board P9_3 Expansion header
+
+- #### Pin details are there in the Datasheet of SOC
+- #### Register details are there in the TRM
+-  Control module --> register ---> **conf_** means **Pad(Pin) configuration register**
+
+#### pad (pin) configuration register are present at offset 800h
+#### pad config reg starts
+                          = BASE_ADDS(of control module engine register) + 800h ;
+                          = 0x44E1_0000  
+                          
 ## Purpose of the Peripheral
 The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module provides **32 dedicated GPIO pins**. So the general-purpose interface supports up to **128 (4 × 32) pins**. These pins can be configured for the following applications:
 - Data input (capture)/output (drive)
@@ -38,10 +49,6 @@ The general-purpose interface combines **4 (GPIO) modules**. Each GPIO module pr
 ![Screenshot from 2023-09-16 21-22-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/fe6affd0-86d8-4d88-a67a-ba4d7a49d170)
 
 
-#### pad (pin) configuration register are present at offset 800h
-#### pad config reg starts
-                          = BASE_ADDS(of control module engine register) + 800h ;
-                          = 0x44E1_0000  
 ![Screenshot from 2023-09-16 19-28-45](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/a27a39fe-daa7-4275-81e4-70bb8ec1c74c)
 
 
