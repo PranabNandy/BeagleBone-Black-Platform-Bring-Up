@@ -39,7 +39,7 @@ iface usb0 inet static
   dns-nameservers 8.8.8.8
   dns-nameservers 8.8.4.4
 
-debian@BeagleBone:~$ sudo route add default gw 192.168.7.1
+debian@BeagleBone:~$ sudo route add default gw 192.168.7.1 usb0
 
 ```
 
