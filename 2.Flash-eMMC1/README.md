@@ -51,8 +51,8 @@ usbnet.sh    ( In Host, iptable settings to share internet between wifi and ethe
 ----------------
 #!/bin/bash
 ##To run this script do
-##1. chmod +x usbnet.sh 
-##2. ./usbnet.sh 
+##1. sudo chmod +x usbnet.sh 
+##2. sudo ./usbnet.sh 
 sudo iptables --table nat --append POSTROUTING --out-interface wlp0s20f3 -j MASQUERADE
 sudo iptables --append FORWARD --in-interface wlp0s20f3 -j ACCEPT
 sudo echo 1 > /proc/sys/net/ipv4/ip_forward
