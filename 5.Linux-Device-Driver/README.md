@@ -1,5 +1,13 @@
 <h1> Linux Device Driver Using BeagleBone Black </h1>
 
+# udev
+
+- udev is a user space program
+- who takes care to add device when you insert a pendrive
+- kernel sends notification (via uevents) to udev when you insert a new device file
+- rules udev follows present  -----> lib/udev/rules.d
+- one of the rules going to create "symbolic link" to sysfs
+
 ## 1. Introduction of Linux Source Tree
 
 ![Screenshot from 2023-09-10 21-42-34](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/cd76d6bf-083d-43a5-a1db-45c9fe8c5b2e)
