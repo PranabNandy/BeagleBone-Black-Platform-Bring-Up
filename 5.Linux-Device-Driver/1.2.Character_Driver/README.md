@@ -206,7 +206,7 @@ loff_t (*llseek) (struct file *filp, loff_t offset, int whence)
 2. **File object** gets **created**
 3. Inode's `i_fop` gets copied to file object's `f_op` (dummy default file operations of char device file)
 4. Open function of dummy default file operations gets called **(chrdev_open)**
-5. Inode object's `i_cdev` field is initialized with `cdev` which you added during `cdev_add` (lookup happens using inode-> i_rdev field)
+5. Inode object's `i_cdev` field is initialized with `cdev` which you added during `cdev_add(&pcd_cdev, device_number, 1);` (lookup happens using inode-> i_rdev field)
 6. `inode->cdev->fops` (this is a real file operations of your driver) gets copied to `file->f_op`
 7. `file->f_op->open` method gets called (read open method of your driver)
 
