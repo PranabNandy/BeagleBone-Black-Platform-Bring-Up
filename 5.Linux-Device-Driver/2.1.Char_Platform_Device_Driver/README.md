@@ -64,7 +64,7 @@ struct bus_type platform_bus_type = {
 	.dma_configure	= platform_dma_configure,
 	.pm		= &platform_dev_pm_ops,
 };
-
+```
 - The Linux platform core implementation maintains platform device and driver lists. Whenever you add a new platform device or driver, this list gets updated and matching mechanism triggers.
 
 ![Screenshot from 2020-11-23 17-13-15](https://user-images.githubusercontent.com/32474027/99940321-454af880-2daf-11eb-9f38-80eee04cb6ff.png)
