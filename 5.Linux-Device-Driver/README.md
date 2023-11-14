@@ -2,11 +2,34 @@
 
 # udev
 
-- udev is a user space program
-- who takes care to add device when you insert a pendrive
-- kernel sends notification (via uevents) to udev when you insert a new device file
-- rules udev follows present  -----> lib/udev/rules.d
-- one of the rules going to create "symbolic link" to sysfs
+- udev is a user space program `(userspace /dev)`
+- who takes care to **add device** when you **insert a pendrive**
+- kernel sends notification (via `uevents`) to udev when you insert a new device file
+- rules udev follows present  -----> `lib/udev/rules.d`
+- one of the rules going to create "symbolic link" to `sysfs`
+
+# struct cdev
+![cdev](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/376b2af8-a5cc-48fc-b67d-9a0ec5b1e86e)
+
+Inside kernel, 
+- character driver comes in between the device file and the streaming device
+- this driver layer takes care of **translating the File I/O operation to Device operations** and vice-versa.
+
+`struct file_operations` is  is used to implement the basic ` file i/o - open(), read(), write(), close(), ioctl(),`  functionality for the the device.
+
+- `struct cdev structure` encapsulates the `file_operations structure` and some other important `driver information(major/minor no).`
+- **cdev** is the new way of **registering character driver** with kernel.
+
+The` cdev structure` is accessed by the kernel through the following API's:
+```
+cdev_init() - used to initialize struct cdev with the defined file_operations
+cdev_add()  - used to add a character device to the system. 
+cdev_del()  - used to remove a character device from the system
+```
+After a call to `cdev_add(),` your device is **immediately alive.**  All functions you defined (through the `file_operations structure`) can be called.
+
+
+
 
 ## 1. Introduction of Linux Source Tree
 
