@@ -6,6 +6,29 @@
 - Create device files to represent platform devices
 - The driver must give open, release, read, write, lseek methods to deal with the devices
 
+## ----------------------------------------------------------------------
+- **Platform Bus :** - It is a virtual concept - Non-discoverable Bus
+- **Platform Device :** - 
+- **Platform Driver :** -
+
+  Devices are auto discoverable for OS via Physical Bus (PCI Bus, USB Bus) using Config Register of it.
+
+  If Kernel detects HW device like WIFI Card, then Kernel loads its Driver.
+
+ I2C controller is a Platform Device
+
+ I2C controller controls I2C bus. It has got 2 I2C devies `( RTC and Temperature Sensor)`
+
+ Passive Bus == Platform Bus
+
+ - **Auto Enumuration :** - Hot plugging of devices
+
+In **PC** everything is auto mated due to USB Bus, PCI Bus.
+
+In **Embedded System**, (device info) configuration difference for difference version of devices.
+
+
+  
 ## 2. Discuss about platform device and platform driver
 ### 2.1 Platform device
 - Platform devices are devices that typically appear as autonomous entities in the system. This includes legacy port-based devices and host bridges to peripheral buses, and most controllers integrated into system-on-chip platforms. What they usually have in common is direct addressing from a CPU bus. Rarely, a platform_device will be connected through a segment of some other kind of bus; but its registers will still be directly addressable.
