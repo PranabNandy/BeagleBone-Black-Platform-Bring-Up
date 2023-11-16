@@ -27,7 +27,19 @@ In **PC** everything is auto mated due to USB Bus, PCI Bus.
 
 In **Embedded System**, (device info) configuration difference for difference version of devices.
 
+We can register Platform Driver 3 ways
+- HW details part of ( Board file, Drivers file )
+- Dynamic Module
+- Boot time using Device Tree Blob
 
+Suppose `I2C Linux Device Driver` ----> for `I2C client`
+
+When we are adding a Device --> Platform driver will get Auto Loaded.
+
+- **driver.ko :** `probe`, `remove`  (1.name   2.id)
+- **device.ko :** `release`
+
+You can find the devices under : `/sys/devices/platform/`
   
 ## 2. Discuss about platform device and platform driver
 ### 2.1 Platform device
