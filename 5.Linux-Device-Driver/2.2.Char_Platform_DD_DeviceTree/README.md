@@ -7,7 +7,7 @@
 
 ## 2. What is device tree ?
 ### 2.1 Concept
-- The “Open Firmware Device Tree”, or simply Device Tree (DT), is a data structure and language for describing hardware. More specifically, it is a description of hardware that is readable by an operating system so that the operating system doesn’t need to hard code details of the machine.
+- The `“Open Firmware Device Tree”, or simply Device Tree (DT), ` is a data structure and language for ` describing hardware.` More specifically, it is a description of hardware that is readable by an operating system `so that the operating system doesn’t need to hard code details of the machine`.
 - Structurally, the DT is a tree, or acyclic graph with named nodes, and nodes may have an arbitrary number of named properties encapsulating arbitrary data. A mechanism also exists to create arbitrary links from one node to another outside of the natural tree structure.
 - Conceptually, a common set of usage conventions, called ‘bindings’, is defined for how data should appear in the tree to describe typical hardware characteristics including data busses, interrupt lines, GPIO connections, and peripheral devices.
 
