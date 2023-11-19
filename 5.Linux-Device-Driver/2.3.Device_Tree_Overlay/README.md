@@ -98,7 +98,8 @@ fdt apply $fdtovaddr
 
 Step 7: Boot system like you would do with a traditional dtb
 ```shell
-bootm ${loadaddr} - ${fdtaddr}
+==> load mnc 0:1 ${loadaddr} uImage
+==> bootm ${loadaddr} - ${fdtaddr}
 ```
 ![Screenshot from 2020-11-25 22-25-26](https://user-images.githubusercontent.com/32474027/100233980-c8b24880-2f6d-11eb-8829-f9fc34340e62.png)
 
