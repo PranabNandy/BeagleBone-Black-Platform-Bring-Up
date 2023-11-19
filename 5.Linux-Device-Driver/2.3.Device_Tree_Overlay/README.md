@@ -3,7 +3,7 @@
 ## 1. Exercise
 - Write a device tree overlay to disable/modify pcdev device nodes from the main dts
 
-**Note:** Reusing source code [05_Char_Platform_DD_DeviceTree](https://github.com/nghiaphamsg/BeagleBoneBlack_Linux_Device_Driver/tree/master/05_Char_Platform_DD_DeviceTree).
+**Note:** Reusing source code [05_Char_Platform_DD_DeviceTree](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/tree/main/5.Linux-Device-Driver/2.2.Char_Platform_DD_DeviceTree).
 
 ## 2. Discuss about Device Tree Overlays (DTO)
 - DT overlays are device tree patches(dtbo) which are used to patch or modify the existing main device tree blob(dtb)
