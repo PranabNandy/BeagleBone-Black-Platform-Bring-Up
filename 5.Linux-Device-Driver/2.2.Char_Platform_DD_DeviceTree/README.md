@@ -1,5 +1,22 @@
 <h1> Exploring Device Tree </h1>
 
+```
+\{
+
+    label : node name @ unit-address (register address){
+         compatible =   "Pranab-Ax"    ,   "pcdev-Bx";
+                        1st Priority         2nd Priority
+    };
+
+};
+```
+**Properties : 1) standard 2) Non-standard**
+
+- Properties will be defined by client Program (OS, Drivers)
+- Then shared with DT writter
+- DT writer will follow that properties
+- CONFIG_OF = Y
+
 ## 1. Code exercise
 - Repeat the exercise pseudo character driver with multiple devices as a platform driver.
 - The driver must give open, release, read, write, lseek methods to deal with the devices
