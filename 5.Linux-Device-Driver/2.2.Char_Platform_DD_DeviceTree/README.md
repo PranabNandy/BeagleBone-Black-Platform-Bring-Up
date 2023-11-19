@@ -16,8 +16,8 @@
 
 ### 2.2 Why DT is used ?
 Linux uses DT for:
-- Platform identification
-- Device population:
+- **Platform identification**
+- **Device population:**
     + The kernel `parses the device tree data and generates the required software data structure, which will be used by the kernel code`.
 - Ideally, the device tree is independent of any OS; when you change the OS, you can still use the same device tree file to describe the hardware to the new OS. That is the `device tree makes “adding of device information“ independent of OS.`
 
