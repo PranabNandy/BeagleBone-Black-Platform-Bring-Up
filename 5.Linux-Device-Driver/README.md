@@ -1,5 +1,7 @@
 <h1> Linux Device Driver Using BeagleBone Black </h1>
 
+**`6 GPIOs, 3 I2C are there in BBB`**
+
 # udev
 
 - udev is a user space program `(userspace /dev)`
