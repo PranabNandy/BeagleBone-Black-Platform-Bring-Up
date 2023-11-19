@@ -2,6 +2,11 @@
 
 **`6 GPIOs, 3 I2C are there in BBB`**
 
+In the Matching algorithm, 
+- Highest Priority: open firmware DT
+- id table
+- name 
+
 # udev
 
 - udev is a user space program `(userspace /dev)`
