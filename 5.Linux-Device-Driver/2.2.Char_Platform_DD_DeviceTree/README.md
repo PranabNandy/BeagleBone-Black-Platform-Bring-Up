@@ -11,7 +11,7 @@
 - Structurally, the DT is a tree, or acyclic graph with named nodes, and nodes may have an arbitrary number of named properties encapsulating arbitrary data. A mechanism also exists to create arbitrary links from one node to another outside of the natural tree structure.
 - Conceptually, a common set of usage conventions, called ‘bindings’, is defined for how data should appear in the tree to describe typical hardware characteristics including data busses, interrupt lines, GPIO connections, and peripheral devices.
 
-- In short, it is a new and recommended way to describe non-discoverable devices(platform devices) to the Linux kernel, which was previously hardcoded into kernel source files. 
+- In short, it is a new and recommended way `to describe non-discoverable devices(platform devices) to the Linux kernel`, which was previously hardcoded into kernel source files. 
 **Source:** *Documentation/devicetree/usage-model.txt*
 
 ### 2.2 Why DT is used ?
