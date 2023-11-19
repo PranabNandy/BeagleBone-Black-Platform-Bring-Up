@@ -42,7 +42,7 @@ const void *of_device_get_match_data(const struct device *dev)
 *https://www.kernel.org/doc/Documentation/devicetree/bindings/*
 
 ### 3. Structure device
-- In Linux every device is represented by an instance of struct device
+- **`In Linux every device is represented by an instance of struct device`**
 - Example node:
     + The I2C controller is located at offset `0x3000` from it's parent
     + The driver for the I2C controller is `fsl-i2c`
