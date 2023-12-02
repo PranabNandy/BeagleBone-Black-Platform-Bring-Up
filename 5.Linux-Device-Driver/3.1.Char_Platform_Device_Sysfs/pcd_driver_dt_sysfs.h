@@ -1,8 +1,8 @@
 /*
  * @brief: General structure platform device & driver 
- * @author: NghiaPham
+ * @author: PranabNandy
  * @ver: v0.1
- * @date: 2020/12/05
+ * @date: 2023/12/05
  *
 */
 
