@@ -1,9 +1,9 @@
 /*
  * @brief: Executable code for device creation, include device tree and device setup code.
  *         Implement sysfs & create custom attributes of a device.
- * @author: NghiaPham
+ * @author: PranabNandy
  * @ver: v0.1
- * @date: 2020/12/05
+ * @date: 2023/12/05
  *
 */
 
@@ -299,6 +299,6 @@ module_init(char_platform_driver_init);
 module_exit(char_platform_driver_exit);
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("NghiaPham");
+MODULE_AUTHOR("PranabNandy");
 MODULE_DESCRIPTION("System fs exercise");
 MODULE_INFO(board,"Beaglebone Black rev.c");
