@@ -1,98 +1,75 @@
-<h1> Linux Device Driver Using BeagleBone Black </h1>
 
-## 1. Introduction of Linux Source Tree
+![Screenshot from 2023-12-03 09-39-11](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/887b2ecc-2820-457d-887a-794e8ba2796d)
 
-![Screenshot from 2023-09-10 21-42-34](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/cd76d6bf-083d-43a5-a1db-45c9fe8c5b2e)
+**Steps**
+- Connect CD to BBB
+- Add required gpio entries to the gpio-sysfs device tree node
+- Recompile the dts file and make BBB boots with modified dtb
+- Load the gpio-sysfs driver
+- Make sure that all required gpio devices are formed under /sys/class/bone_gpios
+- Download the lcd application files attached with this video. lcd_app.c, lcd.c, gpio.c
+- Cross compile the lcd application and test it on the target
+  
+![Screenshot from 2023-12-03 09-47-44](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/15d4f6da-c50b-4fdd-8e58-4baa2535b6d6)
+![Screenshot from 2023-12-03 09-47-57](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/1c3bfaf4-cb3d-4442-a230-f598be98781b)
 
-![Screenshot from 2023-09-10 22-37-44](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/f01fe134-e0e7-4005-93eb-2cce3d44a1f5)
-![Screenshot from 2023-09-10 21-47-17](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/40ae4626-8961-435f-ac96-ed6801492566)
-
-## CPU Specific Arm Architecture Codes 
-
-![Screenshot from 2023-09-10 21-43-50](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/cfaac292-a044-4fae-bf59-394c6523e5d0)
-![Screenshot from 2023-09-10 21-44-42](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/2a706113-fb77-4cd3-bd74-391ef58ebce7)
-
-![Screenshot from 2023-09-10 21-46-41](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/63b7d847-f38c-4208-aef3-d148afcb9233)
-
-## Here from dtb file they match the String "dt_compact" to decide the specific Board in the board-generic.c file
-
-![Screenshot from 2023-09-10 22-17-04](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/72ebd258-5e12-467c-bfd3-efe510b05493)
-
-## Some common Device Driver in Sitara family by TI
-
-![Screenshot from 2023-09-10 22-20-12](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/8e8cbb71-6342-45c1-adc6-27128ec94933)
-
-## Some Top level Driver can in-build Module where its sub-driver can be Dynamic Loadable Module
-![Untitled design](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/80820274/7d156644-2612-43ac-a260-98d8b1540491)
-
-## 2.Linux Device Driver
-
-- Device driver is a piece of code that configures and manages a device. 
-- The device driver code knows, how to configure the device, sending data to the device, and it knows how to process requests which originate from the device. 
-- When the device driver code is loaded into the operating system such as Linux, **it exposes interfaces to the user-space** so that the user application can communicate with the device. 
-- Without the device driver, the OS/Application will not have a clear picture of how to deal with a device.
-- There are three types of device drivers:
-    + **Character device drivers**: character devices (RTC, keyboard, sensor,...)
-    + **Block device drivers**: storage devices (mmc, eeproom, flash, harddisk,...)
-    + **Network device drivers**: network devices (ethernet, wifi, bluetooth,...)
-
-<p align="center"><img width="900" src="https://user-images.githubusercontent.com/32474027/94214748-5db8a700-ff15-11ea-8ee6-8e500a9f9f9a.PNG" \></p>
-
-- **Kernel space**: This is a set of addresses where the kernel is hosted and where it runs. Kernel memory (or kernel space) is a memory range, owned by the kernel, protected by access flags, preventing any user apps from messing with the kernel (un)knowingly. On the other hand, the kernel can access the whole system memory, since it runs with the higher priority on the system. In kernel mode, the CPU can access the whole memory (both kernel space and user space).
-
-- **User space**: This is a set of addresses (locations) where normal programs (such as `gedit` and so on) are restricted to run in. You may consider it a sandbox or a jail, so that a user program can't mess with memory or any other resource owned by another program. In user mode, the CPU can only access memory tagged with user space access rights. The only way for a user app to run in the kernel space is through system calls. Some of these are `read`, `write`, `open`, `close`, `mmap`, and so on. User space code runs with lower priority. **When a process performs a system call, a software interrupt is sent to the kernel, which turns on privileged mode so that the process can run in kernel space**. When the system call returns, the kernel turns off the privileged mode and the process is jailed again.
+![Screenshot from 2023-12-03 09-49-04](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/b8c127b4-dbbf-4b58-899c-c43bee708a39)
 
 
-## 3. Source organization
 
-- `arch/`: The Linux kernel is a fast growing project that supports more and more architectures. That being said, the kernel wants to be as generic as possible. Architecture-specific code is separated from the rest, and falls into this directory. This directory contains processor-specific subdirectories such as `alpha/`, `arm/`, `mips/`, `blackfin/`, and so on.
-- `block/`: This directory contains code for block storage devices, actually the scheduling algorithm.
-- `crypto/`: This directory contains the cryptographic API and the encryption algorithms code.
-- `Documentation/`: This should be your favorite directory. It contains the descriptions of APIs used for different kernel frameworks and subsystems. You should look here prior to asking any questions on forums.
-- `drivers/`: This is the heaviest directory, continuously growing as device drivers get merged. It contains every device driver organized in various subdirectories.
-- `fs/`: This directory contains the implementation of different filesystems that the kernel actually supports, such as *NTFS*, *FAT*, *ETX{2,3,4}*, *sysfs*, *procfs*, *NFS*, and so on.
-- `include/`: This contains kernel header files.
-- `init/`: This directory contains the initialization and start up code.
-- `ipc/`: This contains implementation of the **Inter-Process Communication (IPC)** mechanisms, such as *message queues*, *semaphores*, and *hared memory*...
-- `kernel/`: This directory contains architecture-independent portions of the base kernel.
-- `lib/`: Library routines and some helper functions live here. They are generic **kernel object (kobject)** handlers, **Cyclic Redundancy Code (CRC)** computation functions, and so on.
-- `mm/`: This contains memory management code.
-- `net/`: This contains networking (whatever network type it is) protocols code.
-- `scripts/`: This contains scripts and tools used during kernel development. There are other useful tools here.
-- `security/`: This directory contains the security framework code.
-- `sound/`: Audio subsystems code is here.
-- **`usr/`: This currently contains the initramfs implementation.**
+### LCD commands
 
-## 4. Kernel configuration
-- In most cases, there will be no need to start a configuration from scratch. There are default and useful configuration files available in each `arch/` directory, which you can use as a starting point:
-```shell
-ls arch/<you_arch>/configs/ 
-```
-- For ARM-based CPUs, these configs files are located in `arch/arm/configs/`, and for an BeagleBone Black processor, the default file config is `arch/arm/configs/bb.org_defconfig`. Similarly, for x86 processors we find the files in `arch/x86/configs/`, with only two default configuration files, `i386_defconfig` and `x86_64_defconfig`, for 32-bit and 64-bit versions respectively.
-- For an x86 system:
-```shell
-make x86_64_defconfig
-make uImage -j4
-make modules
-make INSTALL_MOD_PATH=</where/to/install> modules_install
-```
-- For BBB board:
-```shell
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bb.org_defconfig
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- uImage dtbs LOADADDR=0x80008000 -j4
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- modules -j4
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- INSTALL_MOD_PATH=</where/to/install> modules_install
-```
+- Function set
+- Display on/off, cursor on/off and blink control
+- Entry mode set
+- LCD clear display
+- Cursor return home
+- Set co-ordinates
+- Display right/left shift
+- Cursor on/off, blink on/off
+- Address counter read/write
+
+### Sending command/data
+- A command or data byte is of 8bits (1byte)
+- You can send all 8 bits in one go over 8 data lines, or you can split into 2 data transmissions of 4 bits each.
+- For 4-bit data transmission, you only Sending command/data
+- A command or data byte is of 8bits (1byte)
+- You can send all 8 bits in one go over 8 data lines, or you can split into 2 data transmissions of 4 bits each.
+- For 4-bit data transmission, you only need 4 data lines connected between LCD and MCU
+- For 4-bit data transmission, you must use data lines D4 ,D5, D6,D7need 4 data lines connected between LCD and MCU
+- For 4-bit data transmission, you must use data lines D4 ,D5, D6,D7
+
+### Sending a command
+- Create the command code
+- Make RS pin low
+- Make RnW pin low
+- First send higher nibble(4-bits) of the command code to data lines
+- Make LCD enable pin high to low ( when LCD detects high to low transition on enable pin it reads the data from the data lines )
+- Next send the lower nibble of the command code to data lines
+- Make LCD enable pin high to low ( when LCD detects high to low transition on enable pin it reads the data from the data lines )
+- Wait for the instruction execution time before sending the next command or confirm the LCD is not busy by reading the busy flag status on D7 pin .
+
+
+
+### Sending a data byte
+- Make RS high
+- Make RnW low
+- First send higher nibble of the data to data lines
+- Make LCD enable pin high to low ( when LCD detects high to low transition on enable pin it reads the data from the data lines )
+- Next send the lower nibble of the data to data lines
+- Make LCD enable pin high to low ( when LCD detects high to low transition on enable pin it reads the data from the data lines )
 
 
 
 
+![Screenshot from 2023-12-03 09-51-14](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/b268f31a-3776-424d-97c3-0833311719df)
 
+![Screenshot from 2023-12-03 09-53-30](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/052d8f47-ab38-4428-b5a9-0018bc36897f)
 
+![Screenshot from 2023-12-03 09-53-55](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/b6778195-937a-4126-9680-aac9da422d5e)
+![Screenshot from 2023-12-03 09-54-08](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/39b55385-bae4-495d-989f-17949dc27afb)
 
-
-
-
+![Screenshot from 2023-12-03 09-54-25](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/c86749f5-a6f7-4421-ab4d-8d844efd3424)
 
 
 
