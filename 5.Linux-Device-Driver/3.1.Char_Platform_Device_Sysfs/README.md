@@ -1,4 +1,8 @@
 # Char Platform Driver with sysfs
+
+![Screenshot from 2023-12-04 09-04-22](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/e7dd35e1-2f15-4334-9d5d-80eecad4fde1)
+
+
 ![Screenshot from 2023-12-02 18-16-32](https://github.com/PranabNandy/BeagleBone-Black-Platform-Bring-Up/assets/34576104/ab625f95-8f45-4f33-a756-7362f319f6d6)
 
 
