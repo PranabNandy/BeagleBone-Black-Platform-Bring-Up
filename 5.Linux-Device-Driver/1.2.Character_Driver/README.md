@@ -1,3 +1,5 @@
+<img width="1645" height="626" alt="image" src="https://github.com/user-attachments/assets/a059b3f4-67a4-4bf7-99cb-6010808e9739" />
+
 <h1> Character Driver Basic </h1>
 
 - Character driver accesses data from the device sequentially. i.e., byte by byte (like a stream of characters) not as a chunk of data.
