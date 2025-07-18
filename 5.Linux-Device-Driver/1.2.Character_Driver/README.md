@@ -1,5 +1,18 @@
 <img width="1645" height="626" alt="image" src="https://github.com/user-attachments/assets/73347924-fdf0-41d9-87eb-ea1429593f83" />
+>>
 
+>>
+
+
+In **/sys/class/pcd_class/pcd/** → it’s a symlink
+
+- If you don’t register it as a platform device:   → goes under /sys/devices/virtual/pcd_class/pcd
+
+If you do register a platform_device, like:
+
+```c
+platform_device_register_simple("pcd_dev", -1, NULL, 0);
+```
 
 <h1> Character Driver Basic </h1>
 
