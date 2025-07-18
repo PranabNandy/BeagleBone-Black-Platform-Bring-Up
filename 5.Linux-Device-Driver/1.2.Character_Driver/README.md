@@ -6,7 +6,7 @@
 
 In **/sys/class/pcd_class/pcd/** → it’s a symlink
 
-- If you don’t register it as a platform device:   → goes under /sys/devices/virtual/pcd_class/pcd
+- If you don’t register it as a platform device:   → goes under **/sys/devices/virtual/pcd_class/pcd**
 
 If you do register a platform_device, like:
 
